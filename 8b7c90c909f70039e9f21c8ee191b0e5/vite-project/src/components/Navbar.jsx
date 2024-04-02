@@ -1,8 +1,32 @@
-
+import React from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/ecommerce-logo.png";
 import image from "../assets/cart-logo.png";
 
-const NavBar = (props) => {
+
+const NavBar = () => {
+  const [activeTab, setActiveTab ] = useState("");
+  const [loginModal, setLoginModal] = useState(false);
+  const [signupModal, setsignupModal] = useState(false);
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
+  const toggleLoginModal = () => {
+    setLoginModal(!setLoginModal);
+  };
+
+  const togglesignupModal = () => {
+    setsignupModal(!setsignupModal);
+  };
+
+  const toggleModal = () => {
+    setLoginModal(false);
+    setsignupModal(false);
+  };
+
   return (
     <>    
     <div className='nav-bar'>
